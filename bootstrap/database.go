@@ -3,6 +3,7 @@ package bootstrap
 import (
 	"errors"
 	"fmt"
+	"github.com/practice/models/user"
 	"github.com/practice/pkg/config"
 	"github.com/practice/pkg/database"
 	"gorm.io/driver/mysql"
@@ -48,4 +49,7 @@ func SetupDB() {
 	database.SQLDB.SetMaxIdleConns(config.GetInt("database.mysql.max_idle_connections"))
 	// 设置每个连接的过期时间
 	database.SQLDB.SetConnMaxLifetime(time.Duration(config.GetInt("database.mysql.max_life_seconds")) * time.Second)
+
+	// 自动迁移
+	database.DB.AutoMigrate(&user.User{})
 }
