@@ -22,6 +22,9 @@ func main() {
 	flag.Parse()
 	config.InitConfig(env)
 
+	// 初始化 Logger
+	bootstrap.SetupLogger()
+
 	gin.SetMode(gin.DebugMode)
 	// 初始化 DB
 	bootstrap.SetupDB()
