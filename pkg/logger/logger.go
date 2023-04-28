@@ -75,7 +75,7 @@ func getEncoder() zapcore.Encoder {
 
 // customTimeEncoder 自定义友好的时间格式
 func customTimeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-	enc.AppendString(t.Format("2023-01-02 16:15:30"))
+	enc.AppendString(t.Format("2006-01-02 15:06:31"))
 }
 
 // getLogWriter 日志记录介质。使用两种介质，os.Stdout 和文件
@@ -83,7 +83,7 @@ func getLogWriter(filename string, maxSize, maxBackup, maxAge int, compress bool
 
 	// 如果配置了按照日期记录日志文件
 	if logType == "daily" {
-		logname := time.Now().Format("2023-01-02.log")
+		logname := time.Now().Format("2006-01-02.log")
 		filename = strings.ReplaceAll(filename, "logs.log", logname)
 	}
 
