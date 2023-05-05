@@ -7,6 +7,7 @@ import (
 	"github.com/practice/bootstrap"
 	btsConfig "github.com/practice/config"
 	"github.com/practice/pkg/config"
+	"github.com/practice/pkg/sms"
 )
 
 func init() {
@@ -39,6 +40,11 @@ func main() {
 	router := gin.New()
 	// 初始化路由绑定
 	bootstrap.SetupRoute(router)
+
+	sms.NewSMS().Send("15931012793", sms.Message{
+		Template: config.GetString("sms.aliyun.template_code"),
+		Data:     map[string]string{"code": "123456"},
+	})
 
 	// 运行服务
 	err := router.Run(":" + config.Get("app.port"))
