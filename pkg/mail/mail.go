@@ -39,5 +39,5 @@ func NewMailer() *Mailer {
 }
 
 func (mailer *Mailer) Send(email Email) bool {
-	return mailer.Driver.Send(email, config.GetStringMapString("map.smtp"))
+	return mailer.Driver.Send(email, config.GetStringMapString("mail.smtp"))
 }
