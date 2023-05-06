@@ -55,7 +55,7 @@ func (c *Captcha) GenerateCaptcha() (id string, b64s string, err error) {
 func (c *Captcha) VerifyCaptcha(id string, answer string) (match bool) {
 
 	// 方便本地和 API 自动测试
-	if !app.IsProduction() && id == config.GetString("captcha,testing_key") {
+	if !app.IsProduction() && id == config.GetString("captcha.testing_key") {
 		return true
 	}
 
@@ -63,6 +63,3 @@ func (c *Captcha) VerifyCaptcha(id string, answer string) (match bool) {
 	// 这样方便用户多次提交，防止表单提交错误需要多次输入图片验证码
 	return c.base64Captcha.Verify(id, answer, false)
 }
-
-
-
