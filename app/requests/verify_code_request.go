@@ -13,7 +13,7 @@ type VerifyCodePhoneRequest struct {
 	Phone         string `json:"phone,omitempty" valid:"phone"`
 }
 
-// verifyCodePhone 验证表单，返回长度等于零即通过
+// VerifyCodePhone 验证表单，返回长度等于零即通过
 func VerifyCodePhone(data interface{}, c *gin.Context) map[string][]string {
 
 	// 1.定制认证规则
