@@ -221,6 +221,8 @@ go.uber.org/zap/zapcore
 golang.org/x/arch/x86/x86asm
 # golang.org/x/crypto v0.8.0
 ## explicit; go 1.17
+golang.org/x/crypto/bcrypt
+golang.org/x/crypto/blowfish
 golang.org/x/crypto/sha3
 # golang.org/x/image v0.0.0-20190802002840-cff245a6509b
 ## explicit; go 1.12
