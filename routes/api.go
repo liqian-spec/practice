@@ -28,6 +28,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			// 判断 Email 是否注册
 			authGroup.POST("/signup/email/exist", suc.IsEmailExist)
 			authGroup.POST("/signup/using-phone", suc.SignupUsingPhone)
+			authGroup.POST("/signup/using-email", suc.SignupUsingEmail)
 			// 发送验证码
 			vcc := new(auth.VerifyCodeController)
 			// 图片验证码，需要加限流
