@@ -2,7 +2,7 @@ package auth
 
 import (
 	"errors"
-	"github.com/practice/models/user"
+	"github.com/practice/app/models/user"
 )
 
 func Attempt(email string, password string) (user.User, error) {

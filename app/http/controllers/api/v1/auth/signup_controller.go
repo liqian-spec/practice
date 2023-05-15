@@ -3,8 +3,8 @@ package auth
 import (
 	"github.com/gin-gonic/gin"
 	v1 "github.com/practice/app/http/controllers/api/v1"
+	"github.com/practice/app/models/user"
 	"github.com/practice/app/requests"
-	"github.com/practice/models/user"
 	"github.com/practice/pkg/jwt"
 	"github.com/practice/pkg/response"
 )

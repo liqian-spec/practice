@@ -3,7 +3,6 @@ package routes
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/practice/app/http/controllers/api/v1/auth"
-	"net/http"
 )
 
 // RegisterAPIRoutes 注册网页相关路由
@@ -12,13 +11,13 @@ func RegisterAPIRoutes(r *gin.Engine) {
 	//测试一个v1的路由组，我们所有的v1版本的路由都将存放到这里
 	v1 := r.Group("/v1")
 	{
-		// 注册一个路由
-		v1.GET("/", func(c *gin.Context) {
-			// 以JSON格式响应
-			c.JSON(http.StatusOK, gin.H{
-				"Hello": "World",
-			})
-		})
+		//// 注册一个路由
+		//v1.GET("/", func(c *gin.Context) {
+		//	// 以JSON格式响应
+		//	c.JSON(http.StatusOK, gin.H{
+		//		"Hello": "World",
+		//	})
+		//})
 
 		authGroup := v1.Group("/auth")
 		{
@@ -35,9 +34,14 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			authGroup.POST("/verify-codes/captcha", vcc.ShowCaptcha)
 			authGroup.POST("/verify-codes/phone", vcc.SendUsingPhone)
 			authGroup.POST("/verify-codes/email", vcc.SendUsingEmail)
+
 			lgc := new(auth.LoginController)
-			authGroup.GET("/login/using-phone", lgc.LoginByPhone)
+			authGroup.POST("/login/using-phone", lgc.LoginByPhone)
 			authGroup.POST("/login/using-password", lgc.LoginByPassword)
+
+			// 重置密码
+			pwc := new(auth.PasswordController)
+			authGroup.POST("/password-reset/using-phone", pwc.ResetByPhone)
 		}
 	}
 }

@@ -1,6 +1,8 @@
 package user
 
-import "github.com/practice/pkg/database"
+import (
+	"github.com/practice/pkg/database"
+)
 
 // IsEmailExist 判断 Email 已被注册
 func IsEmailExist(email string) bool {

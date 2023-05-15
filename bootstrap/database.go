@@ -3,7 +3,7 @@ package bootstrap
 import (
 	"errors"
 	"fmt"
-	"github.com/practice/models/user"
+	"github.com/practice/app/models/user"
 	"github.com/practice/pkg/config"
 	"github.com/practice/pkg/database"
 	"github.com/practice/pkg/logger"

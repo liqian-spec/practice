@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/practice/models"
+	"github.com/practice/app/models"
 	"github.com/practice/pkg/database"
 	"github.com/practice/pkg/hash"
 )
@@ -26,4 +26,9 @@ func (userModel *User) Create() {
 // ComparePassword 密码是否正确
 func (userModel *User) ComparePassword(_password string) bool {
 	return hash.BcryptCheck(_password, userModel.Password)
+}
+
+func (userModel *User) Save() (rowsAffected int64) {
+	result := database.DB.Save(&userModel)
+	return result.RowsAffected
 }
