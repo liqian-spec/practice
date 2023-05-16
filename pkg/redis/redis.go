@@ -65,6 +65,10 @@ func (rds RedisClient) Set(key string, value interface{}, expiration time.Durati
 	}
 	return true
 }
+func (rds RedisClient) Watch(ctx context.Context, handler func(tx *redis.Tx) error, keys ...string) error {
+
+	return nil
+}
 
 // Get 获取 key 对应的 value
 func (rds RedisClient) Get(key string) string {
@@ -78,7 +82,7 @@ func (rds RedisClient) Get(key string) string {
 	return result
 }
 
-// Has 判断一个key 是否存在，内部错误和 redis.Nil 都返回false
+// Has 判断一个 key 是否存在，内部错误和 redis.Nil 都返回 false
 func (rds RedisClient) Has(key string) bool {
 	_, err := rds.Client.Get(rds.Context, key).Result()
 	if err != nil {
@@ -108,16 +112,16 @@ func (rds RedisClient) FlushDB() bool {
 	return true
 }
 
-// Increment 当参数只有 1个时，为key，其值增加1
-// 当参数为 2个时，第一个参数为key，第二个参数为要增加的值 int64 类型
+// Increment 当参数只有 1 个时，为 key，其值增加 1。
+// 当参数有 2 个时，第一个参数为 key ，第二个参数为要增加的值 int64 类型。
 func (rds RedisClient) Increment(parameters ...interface{}) bool {
 	switch len(parameters) {
 	case 1:
 		key := parameters[0].(string)
 		if err := rds.Client.Incr(rds.Context, key).Err(); err != nil {
 			logger.ErrorString("Redis", "Increment", err.Error())
+			return false
 		}
-		return false
 	case 2:
 		key := parameters[0].(string)
 		value := parameters[1].(int64)
@@ -132,16 +136,16 @@ func (rds RedisClient) Increment(parameters ...interface{}) bool {
 	return true
 }
 
-// Decrement 当参数只有 1个时，为key，其值减去1
-// 当参数为 2个时，第一个参数为key，第二个参数为要减去的值 int64 类型
+// Decrement 当参数只有 1 个时，为 key，其值减去 1。
+// 当参数有 2 个时，第一个参数为 key ，第二个参数为要减去的值 int64 类型。
 func (rds RedisClient) Decrement(parameters ...interface{}) bool {
 	switch len(parameters) {
 	case 1:
 		key := parameters[0].(string)
 		if err := rds.Client.Decr(rds.Context, key).Err(); err != nil {
 			logger.ErrorString("Redis", "Decrement", err.Error())
+			return false
 		}
-		return false
 	case 2:
 		key := parameters[0].(string)
 		value := parameters[1].(int64)
