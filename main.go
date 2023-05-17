@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/practice/app/cmd"
+	"github.com/practice/app/cmd/make"
 	"github.com/practice/bootstrap"
 	btsConfig "github.com/practice/config"
 	"github.com/practice/pkg/config"
@@ -39,6 +40,7 @@ func main() {
 		cmd.CmdServe,
 		cmd.CmdKey,
 		cmd.CmdPlay,
+		make.CmdMake,
 	)
 
 	cmd.RegisterDefaultCmd(rootCmd, cmd.CmdServe)
