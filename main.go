@@ -38,6 +38,7 @@ func main() {
 	rootCmd.AddCommand(
 		cmd.CmdServe,
 		cmd.CmdKey,
+		cmd.CmdPlay,
 	)
 
 	cmd.RegisterDefaultCmd(rootCmd, cmd.CmdServe)
