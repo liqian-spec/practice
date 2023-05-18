@@ -20,6 +20,7 @@ type Model struct {
 	PackageName        string
 }
 
+//go:embed stubs
 var stubsFS embed.FS
 
 var CmdMake = &cobra.Command{
@@ -30,6 +31,7 @@ var CmdMake = &cobra.Command{
 func init() {
 	CmdMake.AddCommand(
 		CmdMakeCMD,
+		CmdMakeModel,
 	)
 }
 
