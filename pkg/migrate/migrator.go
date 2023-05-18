@@ -41,6 +41,7 @@ func (migrator *Migrator) createMigrationsTable() {
 	}
 }
 
+// Up 执行迁移
 func (migrator *Migrator) Up() {
 
 	migrateFiles := migrator.readAllMigrationFiles()
@@ -65,6 +66,7 @@ func (migrator *Migrator) Up() {
 	}
 }
 
+// Rollback 回滚上一步执行的迁移
 func (migrator *Migrator) Rollback() {
 
 	lastMigration := Migration{}
@@ -143,6 +145,7 @@ func (migrator *Migrator) runUpMigration(mfile MigrationFile, batch int) {
 	console.ExitIf(err)
 }
 
+// Reset 回滚所有迁移
 func (migrator *Migrator) Reset() {
 
 	migrations := []Migration{}
@@ -154,6 +157,7 @@ func (migrator *Migrator) Reset() {
 	}
 }
 
+// Refresh 回滚所有迁移，再执行所有迁移
 func (migrator *Migrator) Refresh() {
 
 	migrator.Reset()
@@ -161,6 +165,7 @@ func (migrator *Migrator) Refresh() {
 	migrator.Up()
 }
 
+// Fresh 删除所有表，再执行所有迁移
 func (migrator *Migrator) Fresh() {
 
 	dbname := database.CurrentDatabase()
