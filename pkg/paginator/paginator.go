@@ -109,7 +109,7 @@ func (p Paginator) getCurrentPage() int {
 	return page
 }
 
-func (p Paginator) getTotalCount() int64 {
+func (p *Paginator) getTotalCount() int64 {
 	var count int64
 	if err := p.query.Count(&count).Error; err != nil {
 		return 0
@@ -118,7 +118,7 @@ func (p Paginator) getTotalCount() int64 {
 }
 
 func (p Paginator) getTotalPage() int {
-	if p.TotalPage == 0 {
+	if p.TotalCount == 0 {
 		return 0
 	}
 
