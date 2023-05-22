@@ -3,8 +3,11 @@ package link
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/practice/pkg/app"
+	"github.com/practice/pkg/cache"
 	"github.com/practice/pkg/database"
+	"github.com/practice/pkg/helpers"
 	"github.com/practice/pkg/paginator"
+	"time"
 )
 
 func Get(idstr string) (link Link) {
@@ -36,5 +39,21 @@ func Paginate(c *gin.Context, perPage int) (links []Link, paging paginator.Pagin
 		app.V1URL(database.TableName(&Link{})),
 		perPage,
 	)
+	return
+}
+
+func AllCache() (links []Link) {
+
+	cacheKey := "link:all"
+	expireTime := 120 * time.Minute
+	cache.GetObject(cacheKey, &links)
+
+	if helpers.Empty(links) {
+		links = All()
+		if helpers.Empty(links) {
+			return links
+		}
+		cache.Set(cacheKey, links, expireTime)
+	}
 	return
 }
