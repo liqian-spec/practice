@@ -3,6 +3,7 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/practice/app/models/topic"
+	"github.com/practice/app/policies"
 	"github.com/practice/app/requests"
 	"github.com/practice/pkg/auth"
 	"github.com/practice/pkg/response"
@@ -38,6 +39,11 @@ func (ctrl *TopicsController) Update(c *gin.Context) {
 	topicModel := topic.Get(c.Param("id"))
 	if topicModel.ID == 0 {
 		response.Abort404(c)
+		return
+	}
+
+	if ok := policies.CanModifyTopic(c, topicModel); !ok {
+		response.Abort403(c)
 		return
 	}
 
