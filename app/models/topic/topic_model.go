@@ -3,6 +3,7 @@ package topic
 
 import (
     "github.com/practice/app/models"
+    "github.com/practice/app/models/category"
     "github.com/practice/app/models/user"
     "github.com/practice/pkg/database"
 )
@@ -16,6 +17,8 @@ type Topic struct {
     CategoryID string `json:"category_id,omitempty"`
 
     User user.User `json:"user"`
+
+    Category category.Category `json:"category"`
 
     models.CommonTimestampsField
 }
