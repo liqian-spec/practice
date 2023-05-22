@@ -117,6 +117,10 @@ func Forever(key string, value string) {
 	Cache.Store.Set(key, value, 0)
 }
 
+func Flush() {
+	Cache.Store.Flush()
+}
+
 func Increment(parameters ...interface{}) {
 	Cache.Store.Increment(parameters...)
 }
