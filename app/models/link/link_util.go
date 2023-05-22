@@ -44,7 +44,7 @@ func Paginate(c *gin.Context, perPage int) (links []Link, paging paginator.Pagin
 
 func AllCache() (links []Link) {
 
-	cacheKey := "link:all"
+	cacheKey := "links:all"
 	expireTime := 120 * time.Minute
 	cache.GetObject(cacheKey, &links)
 
