@@ -3,6 +3,7 @@ package bootstrap
 import (
 	"errors"
 	"fmt"
+	"github.com/liqian-spec/practice/app/models/user"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/database"
 	"gorm.io/driver/mysql"
@@ -15,9 +16,10 @@ import (
 func SetupDB() {
 
 	var dbConfig gorm.Dialector
+
 	switch config.Get("database.connection") {
 	case "mysql":
-		dsn := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=%v&parseTime=True&multiStatements=true&loc=local",
+		dsn := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=%v&parseTime=True&multiStatements=true&loc=Local",
 			config.Get("database.mysql.username"),
 			config.Get("database.mysql.password"),
 			config.Get("database.mysql.host"),
@@ -43,4 +45,5 @@ func SetupDB() {
 
 	database.SQLDB.SetConnMaxLifetime(time.Duration(config.GetInt("database.mysql.max_life_seconds")) * time.Second)
 
+	database.DB.AutoMigrate(&user.User{})
 }
