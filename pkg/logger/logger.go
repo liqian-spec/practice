@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/liqian-spec/practice/pkg/app"
 	"go.uber.org/zap"
@@ -81,4 +82,99 @@ func getLogWriter(filename string, maxSize, maxBackup, maxAge int, compress bool
 	} else {
 		return zapcore.AddSync(lumberJackLogger)
 	}
+}
+
+func Dump(value interface{}, msg ...string) {
+	valueString := jsonString(value)
+	if len(msg) > 0 {
+		Logger.Warn("Dump", zap.String(msg[0], valueString))
+	} else {
+		Logger.Warn("Dump", zap.String("data", valueString))
+	}
+}
+
+func LogIf(err error) {
+	if err != nil {
+		Logger.Error("Error Occurred:", zap.Error(err))
+	}
+}
+
+func LogWarnIf(err error) {
+	if err != nil {
+		Logger.Warn("Error Occurred:", zap.Error(err))
+	}
+}
+
+func LogInfoIf(err error) {
+	if err != nil {
+		Logger.Info("Error Occurred:", zap.Error(err))
+	}
+}
+
+func Debug(moduleName string, fields ...zap.Field) {
+	Logger.Debug(moduleName, fields...)
+}
+
+func Info(moduleName string, fields ...zap.Field) {
+	Logger.Info(moduleName, fields...)
+}
+
+func Warn(moduleName string, fields ...zap.Field) {
+	Logger.Warn(moduleName, fields...)
+}
+
+func Error(moduleName string, fields ...zap.Field) {
+	Logger.Error(moduleName, fields...)
+}
+
+func Fatal(moduleName string, fields ...zap.Field) {
+	Logger.Fatal(moduleName, fields...)
+}
+
+func DebugString(moduleName, name, msg string) {
+	Logger.Debug(moduleName, zap.String(name, msg))
+}
+
+func InfoString(moduleName, name, msg string) {
+	Logger.Info(moduleName, zap.String(name, msg))
+}
+
+func WarnString(moduleName, name, msg string) {
+	Logger.Warn(moduleName, zap.String(name, msg))
+}
+
+func ErrorString(moduleName, name, msg string) {
+	Logger.Error(moduleName, zap.String(name, msg))
+}
+
+func FatalString(moduleName, name, msg string) {
+	Logger.Fatal(moduleName, zap.String(name, msg))
+}
+
+func DebugJSON(moduleName, name string, value interface{}) {
+	Logger.Debug(moduleName, zap.String(name, jsonString(value)))
+}
+
+func InfoJSON(moduleName, name string, value interface{}) {
+	Logger.Info(moduleName, zap.String(name, jsonString(value)))
+}
+
+func WarnJSON(moduleName, name string, value interface{}) {
+	Logger.Warn(moduleName, zap.String(name, jsonString(value)))
+}
+
+func ErrorJSON(moduleName, name string, value interface{}) {
+	Logger.Error(moduleName, zap.String(name, jsonString(value)))
+}
+
+func FatalJSON(moduleName, name string, value interface{}) {
+	Logger.Fatal(moduleName, zap.String(name, jsonString(value)))
+}
+
+func jsonString(value interface{}) string {
+	b, err := json.Marshal(value)
+	if err != nil {
+		Logger.Error("Logger", zap.String("JSON marshal error", err.Error()))
+	}
+	return string(b)
 }
