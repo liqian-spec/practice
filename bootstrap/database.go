@@ -6,10 +6,10 @@ import (
 	"github.com/liqian-spec/practice/app/models/user"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/database"
+	"github.com/liqian-spec/practice/pkg/logger"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
 	"time"
 )
 
@@ -37,7 +37,7 @@ func SetupDB() {
 		panic(errors.New("database connection not supported"))
 	}
 
-	database.Connect(dbConfig, logger.Default.LogMode(logger.Info))
+	database.Connect(dbConfig, logger.NewGormLogger())
 
 	database.SQLDB.SetMaxOpenConns(config.GetInt("database.mysql.max_open_connections"))
 
