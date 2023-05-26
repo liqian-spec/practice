@@ -21,6 +21,8 @@ func main() {
 	flag.Parse()
 	config.InitConfig(env)
 
+	gin.SetMode(gin.ReleaseMode)
+
 	bootstrap.SetupLogger()
 
 	router := gin.New()
