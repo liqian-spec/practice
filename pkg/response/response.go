@@ -14,7 +14,7 @@ func JSON(c *gin.Context, data interface{}) {
 func Success(c *gin.Context) {
 	JSON(c, gin.H{
 		"success": true,
-		"message": "错做成功！",
+		"message": "操作成功！",
 	})
 }
 
