@@ -5,7 +5,7 @@ import (
 	v1 "github.com/liqian-spec/practice/app/http/controllers/api/v1"
 	"github.com/liqian-spec/practice/pkg/captcha"
 	"github.com/liqian-spec/practice/pkg/logger"
-	"net/http"
+	"github.com/liqian-spec/practice/pkg/response"
 )
 
 type VerifyCodeController struct {
@@ -16,7 +16,7 @@ func (vc *VerifyCodeController) ShowCaptcha(c *gin.Context) {
 
 	id, b64s, err := captcha.NewCaptcha().GenerateCaptcha()
 	logger.LogIf(err)
-	c.JSON(http.StatusOK, gin.H{
+	response.JSON(c, gin.H{
 		"captcha_id":  id,
 		"captcha_img": b64s,
 	})

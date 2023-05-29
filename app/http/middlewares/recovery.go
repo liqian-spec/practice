@@ -3,9 +3,9 @@ package middlewares
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/pkg/logger"
+	"github.com/liqian-spec/practice/pkg/response"
 	"go.uber.org/zap"
 	"net"
-	"net/http"
 	"net/http/httputil"
 	"os"
 	"strings"
@@ -48,9 +48,7 @@ func Recovery() gin.HandlerFunc {
 					zap.Stack("stacktrace"),
 				)
 
-				c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
-					"message": "服务器内部错误，请稍后再试",
-				})
+				response.Abort500(c)
 			}
 		}()
 		c.Next()

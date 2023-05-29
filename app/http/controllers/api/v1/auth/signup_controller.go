@@ -5,7 +5,7 @@ import (
 	v1 "github.com/liqian-spec/practice/app/http/controllers/api/v1"
 	"github.com/liqian-spec/practice/app/models/user"
 	"github.com/liqian-spec/practice/app/requests"
-	"net/http"
+	"github.com/liqian-spec/practice/pkg/response"
 )
 
 type SignupController struct {
@@ -19,7 +19,7 @@ func (sc *SignupController) IsPhoneExist(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
+	response.JSON(c, gin.H{
 		"exist": user.IsPhoneExist(request.Phone),
 	})
 }
@@ -30,7 +30,7 @@ func (sc *SignupController) IsEmailExist(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
+	response.JSON(c, gin.H{
 		"exist": user.IsEmailExist(request.Email),
 	})
 }
