@@ -28,7 +28,7 @@ func NewClient(address string, username string, password string, db int) *RedisC
 	rds := &RedisClient{}
 	rds.Context = context.Background()
 
-	rds.Context = redis.NewClient(&redis.Options{
+	rds.Client = redis.NewClient(&redis.Options{
 		Addr:     address,
 		Username: username,
 		Password: password,
