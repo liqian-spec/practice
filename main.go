@@ -5,9 +5,8 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/bootstrap"
-	"github.com/liqian-spec/practice/pkg/config"
-
 	btsConfig "github.com/liqian-spec/practice/config"
+	"github.com/liqian-spec/practice/pkg/config"
 )
 
 func init() {
