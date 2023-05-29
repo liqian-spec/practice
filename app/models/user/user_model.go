@@ -1,6 +1,9 @@
 package user
 
-import "github.com/liqian-spec/practice/app/models"
+import (
+	"github.com/liqian-spec/practice/app/models"
+	"github.com/liqian-spec/practice/pkg/database"
+)
 
 type User struct {
 	models.BaseModel
@@ -11,4 +14,8 @@ type User struct {
 	Password string `json:"-"`
 
 	models.CommonTimestampsField
+}
+
+func (userModel *User) Create() {
+	database.DB.Create(&userModel)
 }
