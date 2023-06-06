@@ -67,7 +67,7 @@ func (jwt *JWT) ParserToken(c *gin.Context) (*JWTCustomClaims, error) {
 	return nil, ErrTokenInvalid
 }
 
-func (jwt *JWT) refreshToken(c *gin.Context) (string, error) {
+func (jwt *JWT) RefreshToken(c *gin.Context) (string, error) {
 
 	tokenString, parseErr := jwt.getTokenFromHeader(c)
 	if parseErr != nil {
