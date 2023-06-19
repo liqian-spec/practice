@@ -1,12 +1,14 @@
 package main
 
 import (
-	"flag"
 	"fmt"
-	"github.com/gin-gonic/gin"
+	"github.com/liqian-spec/practice/app/cmd"
 	"github.com/liqian-spec/practice/bootstrap"
 	btsConfig "github.com/liqian-spec/practice/config"
 	"github.com/liqian-spec/practice/pkg/config"
+	"github.com/liqian-spec/practice/pkg/console"
+	"github.com/spf13/cobra"
+	"os"
 )
 
 func init() {
@@ -15,25 +17,32 @@ func init() {
 
 func main() {
 
-	var env string
-	flag.StringVar(&env, "env", "", "加载 .env 文件，如 --env=testing 加载的是 .env.testing 文件")
-	flag.Parse()
-	config.InitConfig(env)
+	var rootCmd = &cobra.Command{
+		Use:   "Practice",
+		Short: "A simple forum project",
+		Long:  `Default will run "serve" command,you can use "-h" flag to see all subcommands`,
 
-	gin.SetMode(gin.ReleaseMode)
+		PersistentPreRun: func(command *cobra.Command, args []string) {
 
-	bootstrap.SetupLogger()
+			config.InitConfig(cmd.Env)
 
-	router := gin.New()
+			bootstrap.SetupLogger()
 
-	bootstrap.SetupDB()
+			bootstrap.SetupDB()
 
-	bootstrap.SetupRedis()
+			bootstrap.SetupRedis()
+		},
+	}
 
-	bootstrap.SetupRoute(router)
+	rootCmd.AddCommand(
+		cmd.CmdServer,
+	)
 
-	err := router.Run(":" + config.Get("app.port"))
-	if err != nil {
-		fmt.Println(err.Error())
+	cmd.RegisterDefaultCmd(rootCmd, cmd.CmdServer)
+
+	cmd.RegisterGlobalFlags(rootCmd)
+
+	if err := rootCmd.Execute(); err != nil {
+		console.Exit(fmt.Sprintf("Failed to run app with %v:%s", os.Args, err.Error()))
 	}
 }
