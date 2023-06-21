@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/liqian-spec/practice/app/cmd"
+	"github.com/liqian-spec/practice/app/cmd/make"
 	"github.com/liqian-spec/practice/bootstrap"
 	btsConfig "github.com/liqian-spec/practice/config"
 	"github.com/liqian-spec/practice/pkg/config"
@@ -38,6 +39,7 @@ func main() {
 		cmd.CmdServer,
 		cmd.CmdKey,
 		cmd.CmdPlay,
+		make.CmdMake,
 	)
 
 	cmd.RegisterDefaultCmd(rootCmd, cmd.CmdServer)
