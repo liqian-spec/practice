@@ -36,6 +36,7 @@ func main() {
 
 	rootCmd.AddCommand(
 		cmd.CmdServer,
+		cmd.CmdKey,
 	)
 
 	cmd.RegisterDefaultCmd(rootCmd, cmd.CmdServer)
