@@ -1,0 +1,19 @@
+package requests
+
+import (
+    "github.com/gin-gonic/gin"
+    "github.com/thedevsaddam/govalidator"
+)
+
+type {{StructName}}Request struct {
+    FIXME()
+}
+
+func {{StructName}}Save(data interface{}, c *gin.Context) map[string][]string {
+
+    rules := govalidator.MapData{}
+
+   messages := govalidator.MapData{}
+
+   return validate(data,rules,messages)
+}
