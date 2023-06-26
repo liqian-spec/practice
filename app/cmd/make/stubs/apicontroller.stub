@@ -1,4 +1,4 @@
-package v1
+package {{version}}
 
 import (
     "github.com/liqian-spec/practice/app/models/{{PackageName}}"
