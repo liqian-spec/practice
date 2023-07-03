@@ -3,7 +3,6 @@ package bootstrap
 import (
 	"errors"
 	"fmt"
-	"github.com/liqian-spec/practice/app/models/user"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/database"
 	"github.com/liqian-spec/practice/pkg/logger"
@@ -44,6 +43,4 @@ func SetupDB() {
 	database.SQLDB.SetMaxIdleConns(config.GetInt("database.mysql.max_idle_connections"))
 
 	database.SQLDB.SetConnMaxLifetime(time.Duration(config.GetInt("database.mysql.max_life_seconds")) * time.Second)
-
-	database.DB.AutoMigrate(&user.User{})
 }

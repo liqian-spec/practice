@@ -92,7 +92,7 @@ func (migrator *Migrator) readAllMigrationFiles() []MigrationFile {
 		mfile := getMigrationFile(fileName)
 
 		if len(mfile.FileName) > 0 {
-			migrationFiles = append(migrateFiles, mfile)
+			migrateFiles = append(migrateFiles, mfile)
 		}
 	}
 
@@ -102,9 +102,9 @@ func (migrator *Migrator) readAllMigrationFiles() []MigrationFile {
 func (migrator *Migrator) runUpMigration(mfile MigrationFile, batch int) {
 
 	if mfile.Up != nil {
-		console.Warning("migrating" + mfile.FileName)
+		console.Warning("migrating " + mfile.FileName)
 		mfile.Up(database.DB.Migrator(), database.SQLDB)
-		console.Success("migrated" + mfile.FileName)
+		console.Success("migrated " + mfile.FileName)
 	}
 
 	err := migrator.DB.Create(&Migration{
