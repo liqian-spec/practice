@@ -4,6 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/app/http/controllers/api/v1/auth"
 	"github.com/liqian-spec/practice/app/http/middlewares"
+
+	controllers "github.com/liqian-spec/practice/app/http/controllers/api/v1"
 )
 
 func RegisterAPIRoutes(r *gin.Engine) {
@@ -35,6 +37,9 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			authGroup.POST("/verify-codes/captcha", middlewares.LimitPerRoute("50-H"), vcc.ShowCaptcha)
 			authGroup.POST("/verify-codes/phone", middlewares.LimitPerRoute("20-H"), vcc.SendUsingPhone)
 			authGroup.POST("/verify-codes/email", middlewares.LimitPerRoute("20-H"), vcc.SendUsingEmail)
+
+			uc := new(controllers.UsersController)
+			v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
 		}
 	}
 }
