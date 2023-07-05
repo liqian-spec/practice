@@ -75,12 +75,12 @@ func init() {
 
 		tableName := rng[0]
 
-		dbFiled := rng[1]
+		dbField := rng[1]
 
 		requestValue := value.(string)
 
 		var count int64
-		database.DB.Table(tableName).Where(dbFiled+" = ?", requestValue).Count(&count)
+		database.DB.Table(tableName).Where(dbField+" = ?", requestValue).Count(&count)
 		if count == 0 {
 			if message != "" {
 				return errors.New(message)
