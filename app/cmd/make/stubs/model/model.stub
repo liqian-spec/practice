@@ -1,7 +1,7 @@
 package {{PackageName}}
 
 import (
-    "github.com/liqian-spec/practice/pkg/logger"
+    "github.com/liqian-spec/practice/app/models"
     "github.com/liqian-spec/practice/pkg/database"
 )
 
