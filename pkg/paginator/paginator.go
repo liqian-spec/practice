@@ -105,10 +105,10 @@ func (p *Paginator) getTotalCount() int64 {
 }
 
 func (p Paginator) getTotalPage() int {
-	if p.TotalPage == 0 {
+	if p.TotalCount == 0 {
 		return 0
 	}
-	nums := int64(math.Ceil(float64(p.TotalPage) / float64(p.PerPage)))
+	nums := int64(math.Ceil(float64(p.TotalCount) / float64(p.PerPage)))
 	if nums == 0 {
 		nums = 1
 	}
