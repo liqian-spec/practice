@@ -37,29 +37,29 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			authGroup.POST("/verify-codes/captcha", middlewares.LimitPerRoute("50-H"), vcc.ShowCaptcha)
 			authGroup.POST("/verify-codes/phone", middlewares.LimitPerRoute("20-H"), vcc.SendUsingPhone)
 			authGroup.POST("/verify-codes/email", middlewares.LimitPerRoute("20-H"), vcc.SendUsingEmail)
+		}
 
-			uc := new(controllers.UsersController)
-			v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
+		uc := new(controllers.UsersController)
+		v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
+		usersGroup := v1.Group("/users")
+		{
+			usersGroup.GET("", uc.Index)
+		}
 
-			usersGroup := v1.Group("/users")
-			{
-				usersGroup.GET("", uc.Index)
-			}
+		cgc := new(controllers.CategoriesController)
+		cgcGroup := v1.Group("/categories")
+		{
+			cgcGroup.GET("", cgc.Index)
+			cgcGroup.POST("", middlewares.AuthJWT(), cgc.Store)
+			cgcGroup.PUT("/:id", middlewares.AuthJWT(), cgc.Update)
+			cgcGroup.DELETE("/:id", middlewares.AuthJWT(), cgc.Delete)
+		}
 
-			cgc := new(controllers.CategoriesController)
-			cgcGroup := v1.Group("/categories")
-			{
-				cgcGroup.GET("", cgc.Index)
-				cgcGroup.POST("", middlewares.AuthJWT(), cgc.Store)
-				cgcGroup.PUT("/:id", middlewares.AuthJWT(), cgc.Update)
-				cgcGroup.DELETE("/:id", middlewares.AuthJWT(), cgc.Delete)
-			}
-
-			tpc := new(controllers.TopicsController)
-			tpcGroup := v1.Group("/topics")
-			{
-				tpcGroup.POST("", middlewares.AuthJWT(), tpc.Store)
-			}
+		tpc := new(controllers.TopicsController)
+		tpcGroup := v1.Group("/topics")
+		{
+			tpcGroup.POST("", middlewares.AuthJWT(), tpc.Store)
+			tpcGroup.PUT("/:id", middlewares.AuthJWT(), tpc.Update)
 		}
 	}
 }
