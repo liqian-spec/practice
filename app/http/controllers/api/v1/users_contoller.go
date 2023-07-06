@@ -83,3 +83,22 @@ func (ctrl *UsersController) UpdatePhone(c *gin.Context) {
 		response.Abort500(c, "更新失败，请稍后尝试~")
 	}
 }
+
+func (ctrl *UsersController) UpdatePassword(c *gin.Context) {
+
+	request := requests.UserUpdatePasswordRequest{}
+	if ok := requests.Validate(c, &request, requests.UserUpdatePassword); !ok {
+		return
+	}
+
+	currentUser := auth.CurrentUser(c)
+	_, err := auth.Attempt(currentUser.Name, request.Password)
+	if err != nil {
+		response.Unauthorized(c, "原密码不正确")
+	} else {
+		currentUser.Password = request.NewPassword
+		currentUser.Save()
+
+		response.Success(c)
+	}
+}
