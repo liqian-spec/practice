@@ -1,0 +1,11 @@
+package policies
+
+import (
+    "github.com/liqian-spec/practice/app/models/{{PackageName}}"
+    "github.com/liqian-spec/practice/pkg/auth"
+    "github.com/gin-gonic/gin"
+)
+
+func CanModify{{StructName}}(c *gin.Context, {{VariableName}}Model {{PackageName}}.{{StructName}}) bool {
+    return auth.CurrentUID(c) == {{VariableName}}Model.UserID
+}
