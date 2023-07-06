@@ -1,7 +1,6 @@
 package v1
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/app/models/category"
 	"github.com/liqian-spec/practice/app/requests"
@@ -15,7 +14,6 @@ type CategoriesController struct {
 func (ctrl *CategoriesController) Store(c *gin.Context) {
 
 	request := requests.CategoryRequest{}
-	fmt.Println(request.Name, 2222)
 	if ok := requests.Validate(c, &request, requests.CategorySave); !ok {
 		return
 	}
