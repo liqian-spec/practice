@@ -5,6 +5,7 @@ import (
 	"github.com/liqian-spec/practice/app/requests/validators"
 	"github.com/liqian-spec/practice/pkg/auth"
 	"github.com/thedevsaddam/govalidator"
+	"mime/multipart"
 )
 
 type UserUpdateProfileRequest struct {
@@ -154,4 +155,25 @@ func UserUpdatePassword(data interface{}, c *gin.Context) map[string][]string {
 	errs = validators.ValidatePasswordConfirm(_data.NewPassword, _data.NewPasswordConfirm, errs)
 
 	return errs
+}
+
+type UserUpdateAvatarRequest struct {
+	Avatar *multipart.FileHeader `valid:"avatar" form:"avatar"`
+}
+
+func UserUpdateAvatar(data interface{}, c *gin.Context) map[string][]string {
+
+	rules := govalidator.MapData{
+		"file:avatar": []string{"ext:png,jpg,jpeg", "size:20971520"},
+	}
+
+	messages := govalidator.MapData{
+		"file:avatar": []string{
+			"ext:ext头像只能上传 png,jpg,jpg 任意一种的图片",
+			"size:头像文件最大不能超过 20MB",
+			"required:必须上传图片",
+		},
+	}
+
+	return validateFile(c, data, rules, messages)
 }
