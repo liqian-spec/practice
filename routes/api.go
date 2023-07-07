@@ -4,13 +4,19 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/app/http/controllers/api/v1/auth"
 	"github.com/liqian-spec/practice/app/http/middlewares"
+	"github.com/liqian-spec/practice/pkg/config"
 
 	controllers "github.com/liqian-spec/practice/app/http/controllers/api/v1"
 )
 
 func RegisterAPIRoutes(r *gin.Engine) {
 
-	v1 := r.Group("/v1")
+	var v1 *gin.RouterGroup
+	if len(config.Get("app.api_domain")) == 0 {
+		v1 = r.Group("/api/v1")
+	} else {
+		v1 = r.Group("v1")
+	}
 
 	v1.Use(middlewares.LimitIP("200-H"))
 	{

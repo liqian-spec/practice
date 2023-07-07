@@ -19,6 +19,8 @@ func init() {
 			"url": config.Env("APP_URL", "http://localhost:3000"),
 
 			"timezone": config.Env("TIMEZONE", "Asia/Shanghai"),
+
+			"api_domain": config.Env("API_DOMAIN"),
 		}
 	})
 }
