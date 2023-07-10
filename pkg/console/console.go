@@ -2,8 +2,9 @@ package console
 
 import (
 	"fmt"
-	"github.com/mgutz/ansi"
 	"os"
+
+	"github.com/mgutz/ansi"
 )
 
 func Success(msg string) {

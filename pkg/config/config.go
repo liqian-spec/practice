@@ -1,10 +1,11 @@
 package config
 
 import (
+	"os"
+
 	"github.com/liqian-spec/practice/pkg/helpers"
 	"github.com/spf13/cast"
 	viperlib "github.com/spf13/viper"
-	"os"
 )
 
 var viper *viperlib.Viper

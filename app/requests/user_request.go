@@ -1,11 +1,12 @@
 package requests
 
 import (
+	"mime/multipart"
+
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/app/requests/validators"
 	"github.com/liqian-spec/practice/pkg/auth"
 	"github.com/thedevsaddam/govalidator"
-	"mime/multipart"
 )
 
 type UserUpdateProfileRequest struct {

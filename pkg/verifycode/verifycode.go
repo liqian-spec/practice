@@ -2,6 +2,9 @@ package verifycode
 
 import (
 	"fmt"
+	"strings"
+	"sync"
+
 	"github.com/liqian-spec/practice/pkg/app"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/helpers"
@@ -9,8 +12,6 @@ import (
 	"github.com/liqian-spec/practice/pkg/mail"
 	"github.com/liqian-spec/practice/pkg/redis"
 	"github.com/liqian-spec/practice/pkg/sms"
-	"strings"
-	"sync"
 )
 
 type VerifyCode struct {

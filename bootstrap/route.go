@@ -1,11 +1,12 @@
 package bootstrap
 
 import (
+	"net/http"
+	"strings"
+
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/app/http/middlewares"
 	"github.com/liqian-spec/practice/routes"
-	"net/http"
-	"strings"
 )
 
 func SetupRoute(router *gin.Engine) {

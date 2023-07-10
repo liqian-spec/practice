@@ -1,13 +1,14 @@
 package limiter
 
 import (
+	"strings"
+
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/logger"
 	"github.com/liqian-spec/practice/pkg/redis"
 	limiterlib "github.com/ulule/limiter/v3"
 	sredis "github.com/ulule/limiter/v3/drivers/store/redis"
-	"strings"
 )
 
 func GetKeyIP(c *gin.Context) string {

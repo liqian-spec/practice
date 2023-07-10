@@ -2,10 +2,11 @@ package make
 
 import (
 	"fmt"
-	"github.com/liqian-spec/practice/pkg/console"
-	"github.com/spf13/cobra"
 	"os"
 	"strings"
+
+	"github.com/liqian-spec/practice/pkg/console"
+	"github.com/spf13/cobra"
 )
 
 var version string

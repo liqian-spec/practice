@@ -1,8 +1,9 @@
 package sms
 
 import (
-	"github.com/liqian-spec/practice/pkg/config"
 	"sync"
+
+	"github.com/liqian-spec/practice/pkg/config"
 )
 
 type Message struct {

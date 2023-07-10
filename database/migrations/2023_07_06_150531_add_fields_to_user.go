@@ -2,6 +2,7 @@ package migrations
 
 import (
 	"database/sql"
+
 	"github.com/liqian-spec/practice/pkg/migrate"
 	"gorm.io/gorm"
 )

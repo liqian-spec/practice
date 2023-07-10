@@ -3,13 +3,14 @@ package logger
 import (
 	"encoding/json"
 	"fmt"
+	"os"
+	"strings"
+	"time"
+
 	"github.com/liqian-spec/practice/pkg/app"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
-	"os"
-	"strings"
-	"time"
 )
 
 var Logger *zap.Logger

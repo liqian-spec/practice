@@ -1,11 +1,12 @@
 package captcha
 
 import (
+	"sync"
+
 	"github.com/liqian-spec/practice/pkg/app"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/redis"
 	"github.com/mojocn/base64Captcha"
-	"sync"
 )
 
 type Captcha struct {

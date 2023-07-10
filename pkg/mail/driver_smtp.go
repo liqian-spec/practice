@@ -2,9 +2,10 @@ package mail
 
 import (
 	"fmt"
+	"net/smtp"
+
 	emailPKG "github.com/jordan-wright/email"
 	"github.com/liqian-spec/practice/pkg/logger"
-	"net/smtp"
 )
 
 type SMTP struct{}

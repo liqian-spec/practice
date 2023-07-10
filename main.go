@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/liqian-spec/practice/app/cmd"
 	"github.com/liqian-spec/practice/app/cmd/make"
 	"github.com/liqian-spec/practice/bootstrap"
@@ -9,7 +11,6 @@ import (
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/console"
 	"github.com/spf13/cobra"
-	"os"
 )
 
 func init() {

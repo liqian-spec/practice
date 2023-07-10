@@ -65,5 +65,3 @@ func RunSeeder(name string) {
 		}
 	}
 }
-
-

@@ -2,13 +2,14 @@ package middlewares
 
 import (
 	"bytes"
+	"io"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/pkg/helpers"
 	"github.com/liqian-spec/practice/pkg/logger"
 	"github.com/spf13/cast"
 	"go.uber.org/zap"
-	"io"
-	"time"
 )
 
 type responseBodyWriter struct {

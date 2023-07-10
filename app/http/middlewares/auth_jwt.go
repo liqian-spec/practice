@@ -2,6 +2,7 @@ package middlewares
 
 import (
 	"fmt"
+
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/app/models/user"
 	"github.com/liqian-spec/practice/pkg/config"

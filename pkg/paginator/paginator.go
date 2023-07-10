@@ -2,14 +2,15 @@ package paginator
 
 import (
 	"fmt"
+	"math"
+	"strings"
+
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/logger"
 	"github.com/spf13/cast"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
-	"math"
-	"strings"
 )
 
 type Paging struct {

@@ -2,10 +2,11 @@ package redis
 
 import (
 	"context"
-	"github.com/liqian-spec/practice/pkg/logger"
-	"github.com/redis/go-redis/v9"
 	"sync"
 	"time"
+
+	"github.com/liqian-spec/practice/pkg/logger"
+	"github.com/redis/go-redis/v9"
 )
 
 type RedisClient struct {

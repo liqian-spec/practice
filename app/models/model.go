@@ -1,8 +1,9 @@
 package models
 
 import (
-	"github.com/spf13/cast"
 	"time"
+
+	"github.com/spf13/cast"
 )
 
 type BaseModel struct {

@@ -2,13 +2,14 @@ package jwt
 
 import (
 	"errors"
+	"strings"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	jwtpkg "github.com/golang-jwt/jwt"
 	"github.com/liqian-spec/practice/pkg/app"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/logger"
-	"strings"
-	"time"
 )
 
 var (

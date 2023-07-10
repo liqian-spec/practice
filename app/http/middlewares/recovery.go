@@ -1,15 +1,16 @@
 package middlewares
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/liqian-spec/practice/pkg/logger"
-	"github.com/liqian-spec/practice/pkg/response"
-	"go.uber.org/zap"
 	"net"
 	"net/http/httputil"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/liqian-spec/practice/pkg/logger"
+	"github.com/liqian-spec/practice/pkg/response"
+	"go.uber.org/zap"
 )
 
 func Recovery() gin.HandlerFunc {

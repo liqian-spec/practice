@@ -1,11 +1,12 @@
 package migrate
 
 import (
+	"os"
+
 	"github.com/liqian-spec/practice/pkg/console"
 	"github.com/liqian-spec/practice/pkg/database"
 	"github.com/liqian-spec/practice/pkg/file"
 	"gorm.io/gorm"
-	"os"
 )
 
 type Migrator struct {

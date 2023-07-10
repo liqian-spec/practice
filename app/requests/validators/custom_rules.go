@@ -3,10 +3,11 @@ package validators
 import (
 	"errors"
 	"fmt"
-	"github.com/liqian-spec/practice/pkg/database"
 	"strconv"
 	"strings"
 	"unicode/utf8"
+
+	"github.com/liqian-spec/practice/pkg/database"
 
 	"github.com/thedevsaddam/govalidator"
 )

@@ -2,6 +2,7 @@ package bootstrap
 
 import (
 	"fmt"
+
 	"github.com/liqian-spec/practice/pkg/cache"
 	"github.com/liqian-spec/practice/pkg/config"
 )

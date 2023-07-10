@@ -2,10 +2,11 @@ package cache
 
 import (
 	"encoding/json"
-	"github.com/liqian-spec/practice/pkg/logger"
-	"github.com/spf13/cast"
 	"sync"
 	"time"
+
+	"github.com/liqian-spec/practice/pkg/logger"
+	"github.com/spf13/cast"
 )
 
 type CacheService struct {

@@ -2,6 +2,7 @@ package seeders
 
 import (
 	"fmt"
+
 	"github.com/liqian-spec/practice/database/factories"
 	"github.com/liqian-spec/practice/pkg/console"
 	"github.com/liqian-spec/practice/pkg/logger"

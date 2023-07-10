@@ -3,13 +3,14 @@ package bootstrap
 import (
 	"errors"
 	"fmt"
+	"time"
+
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/database"
 	"github.com/liqian-spec/practice/pkg/logger"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"time"
 )
 
 func SetupDB() {

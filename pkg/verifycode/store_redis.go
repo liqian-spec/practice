@@ -1,10 +1,11 @@
 package verifycode
 
 import (
+	"time"
+
 	"github.com/liqian-spec/practice/pkg/app"
 	"github.com/liqian-spec/practice/pkg/config"
 	"github.com/liqian-spec/practice/pkg/redis"
-	"time"
 )
 
 type RedisStore struct {

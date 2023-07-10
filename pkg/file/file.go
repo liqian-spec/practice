@@ -2,15 +2,16 @@ package file
 
 import (
 	"fmt"
+	"mime/multipart"
+	"os"
+	"path/filepath"
+	"strings"
+
 	"github.com/disintegration/imaging"
 	"github.com/gin-gonic/gin"
 	"github.com/liqian-spec/practice/pkg/app"
 	"github.com/liqian-spec/practice/pkg/auth"
 	"github.com/liqian-spec/practice/pkg/helpers"
-	"mime/multipart"
-	"os"
-	"path/filepath"
-	"strings"
 )
 
 func Put(data []byte, to string) error {

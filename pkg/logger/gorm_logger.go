@@ -3,14 +3,15 @@ package logger
 import (
 	"context"
 	"errors"
-	"github.com/liqian-spec/practice/pkg/helpers"
-	"go.uber.org/zap"
-	"gorm.io/gorm"
-	gormlogger "gorm.io/gorm/logger"
 	"path/filepath"
 	"runtime"
 	"strings"
 	"time"
+
+	"github.com/liqian-spec/practice/pkg/helpers"
+	"go.uber.org/zap"
+	"gorm.io/gorm"
+	gormlogger "gorm.io/gorm/logger"
 )
 
 type GormLogger struct {

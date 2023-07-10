@@ -1,8 +1,9 @@
 package app
 
 import (
-	"github.com/liqian-spec/practice/pkg/config"
 	"time"
+
+	"github.com/liqian-spec/practice/pkg/config"
 )
 
 func IsLocal() bool {

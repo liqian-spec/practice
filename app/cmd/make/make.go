@@ -3,12 +3,13 @@ package make
 import (
 	"embed"
 	"fmt"
+	"strings"
+
 	"github.com/iancoleman/strcase"
 	"github.com/liqian-spec/practice/pkg/console"
 	"github.com/liqian-spec/practice/pkg/file"
 	"github.com/liqian-spec/practice/pkg/str"
 	"github.com/spf13/cobra"
-	"strings"
 )
 
 type Model struct {
