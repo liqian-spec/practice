@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="935e6870-48a9-48eb-a9ca-593ff71a51ca" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.air.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/cache.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/cmd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/key.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_apicontroller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_cmd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_factory.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_migration.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_policy.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/apicontroller.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/cmd.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/factory.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/migration.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/model/model.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/model/model_hooks.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/model/model_util.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/policy.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/request.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/stubs/seeder.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/migrate.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/play.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/seed.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/serve.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/login_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/password_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/verify_code_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/base_api_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/categories_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/links_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/topics_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/users_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/auth_jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/force_ua.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/guest_jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/limit.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/logger.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/recovery.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/category/category_hooks.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/category/category_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/category/category_util.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/link/link_hooks.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/link/link_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/link/link_util.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/topic/topic_hooks.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/topic/topic_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/topic/topic_util.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user/user_hooks.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user/user_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user/user_util.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/policies/topic_policy.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/category_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/login_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/pagination_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/password_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/requests.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/signup_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/topic_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/user_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/validators/custom_rules.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/validators/custom_validators.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/verify_code_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/logger.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/route.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/captcha.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/log.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/paging.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sms.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/verifycode.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/category_factory.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/link_factory.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/topic_factory.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/user_factory.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_18_155943_add_users_table.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_19_150615_add_categories_table.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_19_174515_add_topics_table.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_22_104314_add_links_table.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_22_142455_add_fields_to_user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/migrations.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/categories_seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/links_seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/topics_seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/users_seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/app/app.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/auth/auth.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/cache.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/store_interface.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/store_redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/captcha/captcha.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/captcha/store_redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/config/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/console/console.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/file/file.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/hash/hash.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/helpers/helpers.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/jwt/jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/limiter/limiter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/logger/gorm_logger.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/logger/logger.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mail/driver_interface.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mail/driver_smtp.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mail/mail.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/migrate/migration_file.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/migrate/migrator.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/paginator/paginator.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/redis/redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/response/response.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/seed/seeder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sms/driver_aliyun.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sms/driver_inrerface.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sms/sms.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/str/str.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/verifycode/store_interface.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/verifycode/store_redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/verifycode/verifycode.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go Application" />
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/Cellar/go/1.19.6/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="alpha" />
+                    <option name="lastUsedInstant" value="1692756036" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1692755893" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1684808799" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/redis/go-redis/v9@v9.0.4/redis.go" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QAq4kzWfLCloJwHC6rWzzywNii" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/Users/user",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "watcher.settings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="practice" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/practice" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BenchmarkFib in github.com/liqian-spec/practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="practice" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/liqian-spec/practice" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gobench" />
+      <pattern value="^\QBenchmarkFib\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="practice" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <package value="github.com/practice" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="935e6870-48a9-48eb-a9ca-593ff71a51ca" name="Changes" comment="" />
+      <created>1684806544572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684806544572</updated>
+      <workItem from="1687158207924" duration="246000" />
+      <workItem from="1687158478125" duration="108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
